@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block menu %}
+{{super()}}
+
+Hello
+{% for data in res %}
+<div class="user">
+    id: {{data.id}} Name: {{ data.name }} 
+</div>
+
+{% endfor %}
+<form action="/add_department",method='post'><button>Add</button></form>
+{% endblock %}

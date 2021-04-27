@@ -1,0 +1,39 @@
+menu li{list-style: none;
+display: block;
+flex-direction: row;
+background-color: rgb(185, 241, 223);
+padding: 1em 3em 1em 3em;
+
+}
+
+menu a{text-decoration: none;
+color: grey;}
+
+menu li:hover
+{
+    background-color: cadetblue;
+    text-decoration: underline;
+    color: lightgrey;
+}
+menu ul{
+    display: flex;
+    justify-content:center
+}
+
+.user {
+    display: block;
+    text-decoration: none;
+    padding: 1em 3em 1em 3em;
+    margin: 0px 0px 0px 0px;
+}
+.user:nth-child(odd){
+    
+    background-color: rgb(185, 241, 223);
+    
+}
+
+.user:nth-child(even){
+    background-color: rgb(133, 190, 236);
+}
+
+form{display: inline-flex;}
