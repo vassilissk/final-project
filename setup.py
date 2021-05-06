@@ -13,10 +13,10 @@ app.config[SQLALCHEMY_TRACK_MODIFICATIONS] = False
 
 from views.views import *
 
-manager = Manager(app)
+#manager = Manager(app)
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-manager.add_command('db', MigrateCommand)
+#migrate = Migrate(app, db)
+#manager.add_command('db', MigrateCommand)
 
 
 # Use 'flask db init' to create migrations

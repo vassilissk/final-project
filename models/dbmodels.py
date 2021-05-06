@@ -7,7 +7,7 @@ class Department(db.Model):
     name = db.Column(db.String(255), nullable=False)
 
     def __repr__(self):
-        return str(self.id)+' '+self.name
+        return self.name
 
 
 class Employee(db.Model):
@@ -18,4 +18,4 @@ class Employee(db.Model):
     salary = db.Column(db.Integer())
 
     def __repr__(self):
-        return str(self.id)+' '+self.name+' '+str(self.date_of_birth)+' '+str(self.salary)
+        return str(self.id)+' '+self.name+' '+str(self.date_of_birth)+' '+str(self.salary)+' '+str(self.department_id)

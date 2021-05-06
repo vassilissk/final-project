@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block menu %}
+{{super()}}
+
+Hello,world
+
+<div class="user">
+  ID: <strong>{{res.id}}</strong><br>
+  Name: <strong>{{res.name}}</strong><br>
+  Department: <strong>{{res.department_id}}</strong><br>
+  Date of birth: <strong>{{res.date_of_birth}}</strong><br>
+  Salary: <strong>{{res.salary}}</strong><br>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block menu %}
+{{super()}}
+
+Hello
+{% for data in res %}
+<div class="user">
+<a href={{ url_for('profile', user_id=data.id) }} >
+    id: {{data.id}} Name: {{ data.name }} 
+</a>
+</div>
+
+{% endfor %}
+
+{% endblock %}

@@ -5,9 +5,20 @@
 Hello
 {% for data in res %}
 <div class="user">
-    id: {{data.id}} Name: {{ data.name }} 
+    <a href={{ url_for('department', dep_id=data.id)}} >
+    id: {{data.id}} Name: {{ data.name }}
+    </a>
+    <form action="/del_dep" method='POST'>
+<input type="submit" value="Delete department">
+</form>
 </div>
 
 {% endfor %}
-<form action="/add_department",method='post'><button>Add</button></form>
+<form action="/add_dep" method='POST'>
+<input type="submit" value="Add department">
+</form>
+
+{% for msg in get_flashed_messages() %}
+<div class="flash">{{msg}}</div>
+{% endfor %}
 {% endblock %}
