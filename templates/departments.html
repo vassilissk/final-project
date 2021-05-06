@@ -5,7 +5,7 @@
 Hello
 {% for data in res %}
 <div class="user">
-    <a href={{ url_for('department', dep_id=data.id)}} >
+    <a href={{ url_for(  'department', dep_id=data.id)}} >
     id: {{data.id}} Name: {{ data.name }}
     </a>
     <form action="/del_dep" method='POST'>
@@ -14,7 +14,7 @@ Hello
 </div>
 
 {% endfor %}
-<form action="/add_dep" method='POST'>
+<form action="/add_dep" >
 <input type="submit" value="Add department">
 </form>
 
