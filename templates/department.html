@@ -6,7 +6,7 @@ Hello
 {% for data in res %}
 <div class="user">
 <a href={{ url_for('profile', user_id=data.id) }} >
-    id: {{data.id}} Name: {{ data.name }} 
+    id: {{data.id}} Name: {{ data.name }} Salary: {{ data.salary }}
 </a>
 </div>
 

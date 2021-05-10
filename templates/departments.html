@@ -3,13 +3,18 @@
 {{super()}}
 
 Hello
-{% for data in res %}
+{% for data, salary in result %}
 <div class="user">
-    <a href={{ url_for(  'department', dep_id=data.id)}} >
+    <a href={{ url_for('department', dep_id=data.id)}} >
     id: {{data.id}} Name: {{ data.name }}
     </a>
-    <form action="/del_dep" method='POST'>
+    average salary:{{salary}}
+    <form action={{ url_for('del_dep', dep_id=data.id)}} method=['POST','GET']>
 <input type="submit" value="Delete department">
+</form>
+
+       <form action={{ url_for('edit_dep', dep_id=data.id)}} method=['POST','GET']>
+<input type="submit" value="Edit department">
 </form>
 </div>
 
