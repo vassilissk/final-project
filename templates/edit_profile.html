@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block menu %}
+{{super()}}
+
+<form action="" method='POST' >
+  <p><label>Name: </label> <input type="text" name="name" value= "{{name}}" required>
+  <p><label>Date of birth: </label> <input type="text" name="birth" value="{{date_of_birth}}" requied>
+  <p><label>Department: </label> <input type="text" name="department" value="{{department_id}}" requied>
+  <p><label>Salary: </label> <input type="text" name="salary" value="{{salary}}" requied>
+
+<p><input type="submit" value="Edit profile">
+</form>
+
+{% endblock %}

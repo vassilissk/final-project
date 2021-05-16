@@ -12,5 +12,12 @@ Hello,world
   Salary: <strong>{{res.salary}}</strong><br>
 </div>
 
+<form action={{url_for('del_profile', profile_id=res.id)}} method='GET' >
+<p><input type="submit" value="Delete employee">
+</form>
+
+<form action={{url_for('edit_profile', profile_id=res.id)}} method='GET' >
+<p><input type="submit" value="Edit profile">
+</form>
 
 {% endblock %}

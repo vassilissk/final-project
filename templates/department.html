@@ -6,10 +6,20 @@ Hello
 {% for data in res %}
 <div class="user">
 <a href={{ url_for('profile', user_id=data.id) }} >
-    id: {{data.id}} Name: {{ data.name }} Salary: {{ data.salary }}
+    id: {{data.id}} Name: {{ data.name }} Salary: {{ data.salary }} Department ID: {{data.department_id}}
 </a>
 </div>
-
 {% endfor %}
+
+<form action={{ url_for('add_employee',dep_id=dep_id)}} method=['POST','GET'] >
+<p><input type="submit" value="Add employee">
+</form>
+
+<form action={{ url_for('search',dep_id=dep_id)}} method=['POST','GET'] >
+  <p><label>Date of born 1: </label> <input type="text" name="first" value="" requied>
+  <p><label>Date of born 2 </label> <input type="text" name="second" value="" requied>
+
+<p><input type="submit" value="search">
+</form>
 
 {% endblock %}
