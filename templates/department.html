@@ -11,13 +11,13 @@ Hello
 </div>
 {% endfor %}
 
-<form action={{ url_for('add_employee',dep_id=dep_id)}} method=['POST','GET'] >
+<form action={{ url_for('add_employee',dep_id=dep_id)}} method='GET' >
 <p><input type="submit" value="Add employee">
 </form>
 
-<form action={{ url_for('search',dep_id=dep_id)}} method=['POST','GET'] >
-  <p><label>Date of born 1: </label> <input type="text" name="first" value="" requied>
-  <p><label>Date of born 2 </label> <input type="text" name="second" value="" requied>
+<form action={{ url_for('search',dep_id=dep_id)}} method='POST' >
+  <p><label>Date of born from: </label> <input type="text" name="first" value="" requied>
+  <p><label>Date of born to </label> <input type="text" name="second" value="" requied>
 
 <p><input type="submit" value="search">
 </form>

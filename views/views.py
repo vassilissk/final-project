@@ -129,7 +129,16 @@ def edit_profile(profile_id):
 
 @app.route('/search/<dep_id>', methods=['POST', 'GET'])
 def search(dep_id):
-    res = Department.query.filter(Department.id == dep_id)
-    db.session.delete(res[0])
-    db.session.commit()
-    return render_template('search.html')
+    print(dep_id)
+    first = request.form.get('first', False)
+    second = request.form.get('second', False)
+    if second:
+        res = Employee.query.filter(Employee.department_id == dep_id).\
+            filter(Employee.date_of_birth >= first).\
+            filter(Employee.date_of_birth <= second)
+    else:
+        res = Employee.query.filter(Employee.department_id == dep_id). \
+            filter(Employee.date_of_birth == first)
+    for i in res:
+        print(i)
+    return render_template('search.html', res=res)
