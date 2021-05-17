@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.debug = True
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 app.config['SECRET_KEY'] = 'a really really really really long secret key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///D:\\Python\\Python_courses\\final_project\\service\\database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///D:\\old_d\\Python\\final-project\\service\\database.db'
 app.config[SQLALCHEMY_TRACK_MODIFICATIONS] = False
 
 from views.views import *

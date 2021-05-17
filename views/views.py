@@ -69,11 +69,16 @@ def profile(user_id):
     return render_template('profile.html', res=res[0])
 
 
-@app.route('/del_dep/<dep_id>', methods=['POST', 'GET'])
+@app.route('/del_dep/<dep_id>', methods=['GET'])
 def del_dep(dep_id):
+    res = Employee.query.filter(Employee.department_id == dep_id)
+    for i in res:
+        db.session.delete(i)
+    db.session.commit()
     res = Department.query.filter(Department.id == dep_id)
     db.session.delete(res[0])
     db.session.commit()
+
     return redirect(url_for('departments', dep_id=dep_id))
 
 
