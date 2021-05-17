@@ -58,14 +58,15 @@ def edit_dep(dep_id):
 
 @app.route('/department/<dep_id>')
 def department(dep_id):
+    dep_name = Department.query.filter(Department.id == dep_id)[0].name
+    print (dep_name)
     res = Employee.query.filter(Employee.department_id == dep_id)
-    return render_template('department.html', dep_id=dep_id, res=res)
+    return render_template('department.html', dep_id=dep_id, res=res, dep_name=dep_name)
 
 
 @app.route('/profile/<user_id>')
 def profile(user_id):
     res = Employee.query.filter(Employee.id == user_id)
-    print(res)
     return render_template('profile.html', res=res[0])
 
 
@@ -79,7 +80,7 @@ def del_dep(dep_id):
     db.session.delete(res[0])
     db.session.commit()
 
-    return redirect(url_for('departments', dep_id=dep_id))
+    return redirect(url_for('departments'))
 
 
 @app.route('/department/<dep_id>/add_employee', methods=['POST', 'GET'])

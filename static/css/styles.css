@@ -35,5 +35,19 @@ menu ul{
 .user:nth-child(even){
     background-color: rgb(133, 190, 236);
 }
+a span, span {
+
+    margin-left: 50px;
+}
+a{
+color:black;
+text-decoration: none}
+
+#department_name{
+    font-weight: bold;
+    font-size: 1.3em;
+    width: 100%;
+
+}
 
 form{display: inline-flex;}

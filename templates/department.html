@@ -2,11 +2,13 @@
 {% block menu %}
 {{super()}}
 
-Hello
+<h1>{{dep_name}}</h1>
 {% for data in res %}
 <div class="user">
-<a href={{ url_for('profile', user_id=data.id) }} >
-    id: {{data.id}} Name: {{ data.name }} Salary: {{ data.salary }} Department ID: {{data.department_id}}
+<a href="{{ url_for('profile', user_id=data.id) }}" >
+    id: {{data.id}}
+    <span> {{ data.name }} </span>
+
 </a>
 </div>
 {% endfor %}

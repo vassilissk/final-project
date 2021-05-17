@@ -5,8 +5,8 @@
 Hello
 {% for data in res %}
 <div class="user">
-<a href={{ url_for('profile', user_id=data.id) }} >
-    id: {{data.id}} Name: {{ data.name }} Salary: {{ data.salary }} Department ID: {{data.department_id}}
+<a href="{{ url_for('profile', user_id=data.id) }}" >
+    id: {{data.id}} Name: {{ data.name }}
 </a>
 </div>
 {% endfor %}

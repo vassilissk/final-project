@@ -5,15 +5,15 @@
 Hello
 {% for data, salary in result %}
 <div class="user">
-    <a href={{ url_for('department', dep_id=data.id)}} >
-    id: {{data.id}} Name: {{ data.name }}
+    <a id="department_name" href="{{ url_for('department', dep_id=data.id)}}" >
+     {{ data.name }}
     </a>
-    average salary:{{salary}}
-    <form action={{ url_for('del_dep', dep_id=data.id)}} method=['POST','GET']>
+    <span>average salary:{{salary}}</span>
+    <form action="{{ url_for('del_dep', dep_id=data.id)}}" method=['POST','GET']>
 <input type="submit" value="Delete department">
 </form>
 
-       <form action={{ url_for('edit_dep', dep_id=data.id)}} method=['POST','GET']>
+       <form action="{{ url_for('edit_dep', dep_id=data.id)}}" method=['POST','GET']>
 <input type="submit" value="Edit department">
 </form>
 </div>
